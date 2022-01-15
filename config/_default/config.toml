@@ -1,4 +1,4 @@
-baseurl = "https://doks.netlify.app/"
+baseurl = "https://st-saint.github.io/doks"
 canonifyURLs = false
 disableAliases = true
 disableHugoGeneratorInject = true
@@ -6,7 +6,7 @@ enableEmoji = true
 enableGitInfo = false
 enableRobotsTXT = true
 languageCode = "en-US"
-paginate = 7
+paginate = 8
 rssLimit = 10
 
 # Multilingual
