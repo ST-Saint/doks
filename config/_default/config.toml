@@ -1,4 +1,4 @@
-baseurl = "https://st-saint.github.io"
+baseurl = "https://st-saint.github.io/doks"
 canonifyURLs = false
 disableAliases = true
 disableHugoGeneratorInject = true
