@@ -80,7 +80,7 @@ Source:
 
   /*
   var docs = [
-    {{ range $index, $page := (where .Site.Pages "Section" "docs") -}}
+    {{ range $index, $page := (where .Site.Pages "Section" "cheatsheet") -}}
       {
         id: {{ $index }},
         href: "{{ .Permalink }}",
@@ -94,7 +94,7 @@ Source:
 
   // https://discourse.gohugo.io/t/range-length-or-last-element/3803/2
 
-  {{ $list := (where .Site.Pages "Section" "docs") -}}
+  {{ $list := (where .Site.Pages "Section" "cheatsheet") -}}
   {{ $len := (len $list) -}}
 
   index.add(
@@ -117,8 +117,6 @@ Source:
   ;
 
   search.addEventListener('input', show_results, true);
-
-          var currentSection = "{{ .Section }}"
 
   function show_results(){
     const maxResult = 5;

@@ -1,3 +1,18 @@
+[[main]]
+  name = "Docs"
+  url = "/docs/prologue/introduction/"
+  weight = 10
+
+[[main]]
+  name = "CheatSheet"
+  url = "/cheatsheet"
+  weight = 20
+
+[[main]]
+  name = "Blog"
+  url = "/blog/"
+  weight = 30
+
 [[docs]]
   name = "Prologue"
   weight = 10
@@ -10,16 +25,11 @@
   identifier = "help"
   url = "/docs/help/"
 
-[[main]]
-  name = "Docs"
-  url = "/docs/prologue/introduction/"
-# url = "/docs/1.0/prologue/introduction/"
-  weight = 10
-
-[[main]]
-  name = "Blog"
-  url = "/blog/"
-  weight = 20
+[[cheatsheet]]
+  name = "cheatsheet"
+  weight = 100
+  identifier = "cheatsheet"
+  url = "/cheatsheet/"
 
 [[social]]
   name = "GitHub"

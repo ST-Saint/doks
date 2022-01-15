@@ -1,5 +1,9 @@
 {{ $indexTemplate := resources.Get "js/index.js" -}}
 {{ $index := $indexTemplate | resources.ExecuteAsTemplate "index.js" . -}}
+{{ $docsTemplate := resources.Get "js/docs.js" -}}
+{{ $docs := $docsTemplate | resources.ExecuteAsTemplate "docs.js" . -}}
+{{ $cheatsheetTemplate := resources.Get "js/cheatsheet.js" -}}
+{{ $cheatsheet := $cheatsheetTemplate | resources.ExecuteAsTemplate "cheatsheet.js" . -}}
 
 {{ $bs := resources.Get "js/bootstrap.js" -}}
 {{ $bs := $bs | js.Build -}}
@@ -74,8 +78,12 @@
   {{ with .Params.mermaid -}}
     <script src="{{ $mermaid.RelPermalink }}" defer></script>
   {{ end -}}
-  {{ if and (.Site.Params.options.flexSearch) (eq .Section "docs") -}}
+  {{ if .Site.Params.options.flexSearch -}}
+    {{ if eq .Section "docs" -}}
     <script src="{{ $index.RelPermalink }}" defer></script>
+    {{else if eq .Section "cheatsheet" -}}
+    <script src="{{ $cheatsheet.RelPermalink }}" defer></script>
+    {{ end -}}
   {{ end -}}
 {{ else -}}
   {{ $js := $js | minify | fingerprint "sha512" -}}
@@ -99,7 +107,11 @@
   {{ with .Params.mermaid -}}
     <script src="{{ $mermaid.RelPermalink }}" integrity="{{ $mermaid.Data.Integrity }}" crossorigin="anonymous" defer></script>
   {{ end -}}
-  {{ if and (.Site.Params.options.flexSearch) (eq .Section "docs") -}}
-    <script src="{{ $index.Permalink }}" integrity="{{ $index.Data.Integrity }}" crossorigin="anonymous" defer></script>
+  {{ if .Site.Params.options.flexSearch -}}
+    {{ if eq .Section "docs" -}}
+    <script src="{{ $docs.RelPermalink }}" defer></script>
+    {{else if eq .Section "cheatsheet" -}}
+    <script src="{{ $cheatsheet.RelPermalink }}" defer></script>
+    {{ end -}}
   {{ end -}}
 {{ end -}}
