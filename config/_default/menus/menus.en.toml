@@ -10,7 +10,7 @@
 
 [[main]]
   name = "Blog"
-  url = "/blog/"
+  url = "https://st-saint.github.io/"
   weight = 30
 
 [[docs]]
