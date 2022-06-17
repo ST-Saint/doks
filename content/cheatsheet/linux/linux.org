@@ -15,6 +15,31 @@ for it in $array; do
 done
 #+end_src
 
+** time
+#+begin_src shell
+date "+%F %H:%M:%S.%N"
+#+end_src
+
+** copy to clipboard
+#+begin_src shell
+echo "" | xclip -set clip
+#+end_src
+
+** sort
+*** options
+| *-k* [n, m] | 选择区间           |
+| *-t*        | g分隔符            |
+| *-M*        | 排序月份           |
+| *-n*        | 以数值型进行排序   |
+| *-h*        | 可读的数字(带单位) |
+| *-f*        | 忽略大小写         |
+*** example
+
+
+** jobs
+*** list background process
++ =jobs=
+
 ** condition
 *** 中括号
 **** 单中括号 [ ]
@@ -87,11 +112,15 @@ xargs -I '{}' mv dir1/'{}' dir2/'{}'
 uniq -u
 #+end_src
 
-** grep
-grep
+** grep & rg
+*** grep
 
-* zip
+** pacman
+*** 清除
++ sudo pacman -R $(pacman -Qdtq)
+
 ** zip
+*** zip
 - -q 不显示命令
 - -r 递归
 - -y 不解析 symbol link
@@ -104,10 +133,14 @@ zip -qry zip_file.zip file1 file2 dir1
 #+begin_src shell
 unzip jacoco-0.8.7.zip -d jacoco
 #+end_src
-** tar
-*** 解压
+*** tar
+**** 解压
 #+begin_src shell
 tar -xzvf sample.tar.gz -C ./sample
+#+end_src
+**** 压缩
+#+begin_src
+tar -czf sample.tar.gz ./sample
 #+end_src
 
 * network
